@@ -636,8 +636,8 @@ where
     }
 
     /// Returns the signal to noise radio of the the last received packet.
-    pub fn get_packet_snr(&mut self) -> Result<f64, Error<E, CS::Error, RESET::Error>> {
-        Ok(f64::from(
+    pub fn get_packet_snr(&mut self) -> Result<i32, Error<E, CS::Error, RESET::Error>> {
+        Ok(i32::from(
             self.read_register(Register::RegPktSnrValue.addr())?,
         ))
     }
